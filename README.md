@@ -1,6 +1,7 @@
 # app_with_tabs
 
-A new Flutter project.
+A new Flutter project using the previous calculator one I made.
+Implemented tabs and an app drawer to include navigation between differnet pages
 
 ## Getting Started
 
