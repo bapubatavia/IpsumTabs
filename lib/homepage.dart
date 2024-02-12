@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   
   int selectedTab = 0;
-  void navigateBar(int index){
+  void navigateTabs(int index){
     setState(() {
       selectedTab = index;
     });
@@ -29,52 +29,63 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
+      drawer: Drawer(     
         child: ListView(
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.grey,
+                color: Colors.green[400],
               ),
-              child: Text('My App'),
+              child: const Center(child: Text('IPSUM-TAB', style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold))),
             ),
             ListTile(
+              selectedTileColor: Colors.grey[300],
+              selectedColor: Colors.green[400],
               title: const Text('Home'),
-              trailing: const Icon(Icons.home),
+              trailing: const Icon(Icons.home),              
               selected: selectedTab == 0,
               onTap: (){
-                navigateBar(0);
+                navigateTabs(0);
                 Navigator.pop(context);
               }
             ),
             ListTile(
+              selectedTileColor: Colors.grey[300],
+              selectedColor: Colors.green[400],              
               title: const Text('Calculator'),
               trailing: const Icon(Icons.calculate),
               selected: selectedTab == 1,
               onTap: (){
-                navigateBar(1);
+                navigateTabs(1);
                 Navigator.pop(context);
               }
             ),
             ListTile(
+              selectedTileColor: Colors.grey[300],
+              selectedColor: Colors.green[400],              
               title: const Text('About Us'),
               trailing: const Icon(Icons.info),
               selected: selectedTab == 2,
               onTap: (){
-                navigateBar(2);
+                navigateTabs(2);
                 Navigator.pop(context);
               }
             ),
           ],
         ),
       ),
-      appBar: AppBar(title: const Text('MyApp', style:TextStyle(color: Colors.white)), backgroundColor: Colors.black,),
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white, weight: 30.0),
+        title: const Text('IPSUM-TAB', 
+        style:TextStyle(color: Colors.white)), 
+        backgroundColor: Colors.black,
+      ),
       body: pages[selectedTab],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green[400],
         unselectedItemColor: Colors.black,
         currentIndex: selectedTab,
-        onTap: navigateBar,
+        onTap: navigateTabs,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.calculate), label: 'Calculator'),

@@ -25,9 +25,9 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       appBar:  AppBar(
-        title: const Text('Creator ID card'),
+        title: const Text('Creator ID card', style: TextStyle(fontSize: 18.0),),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         titleTextStyle: const TextStyle(color: Colors.white),
@@ -39,7 +39,7 @@ class _AboutUsState extends State<AboutUs> {
             clickCounter += 1;
           });
         },
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.grey[100],
         child: const Icon(Icons.add),),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -54,12 +54,12 @@ class _AboutUsState extends State<AboutUs> {
             ),
             Divider(
               height: 60.0,
-              color: Colors.grey[800],
+              color: Colors.grey[900],
             ),
-            const Text(
+            Text(
               'NAME',
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[800],
                 letterSpacing: 2.0,
               )
             ),
@@ -67,17 +67,17 @@ class _AboutUsState extends State<AboutUs> {
             Text(
               'Luc Bapu BATAVIA',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.green[400],
                 letterSpacing: 2.0,
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold
               )
             ),
             const SizedBox(height: 30.0),
-            const Text(
+            Text(
               'CURRENT TIMES YOU HAVE CLICKED ON BUTTON',
               style: TextStyle(
-                color: Colors.grey,
+                color: Colors.grey[800],
                 letterSpacing: 2.0,
               )
             ),
@@ -85,7 +85,7 @@ class _AboutUsState extends State<AboutUs> {
             Text(
               '$clickCounter',
               style: TextStyle(
-                color: Colors.amberAccent[200],
+                color: Colors.green[400],
                 letterSpacing: 2.0,
                 fontSize: 28.0,
                 fontWeight: FontWeight.bold
@@ -96,13 +96,13 @@ class _AboutUsState extends State<AboutUs> {
               children: <Widget>[
                 Icon(
                   Icons.email,
-                  color: Colors.grey[400],
+                  color: Colors.grey[800],
                 ),
                 const SizedBox(width: 10.0),
                 Text(
                   'bapu.batavia@rwanda.rw',
                   style: TextStyle(
-                    color: Colors.grey[400],
+                    color: Colors.grey[800],
                     fontSize: 18.0,
                     letterSpacing: 1.0,
                   )
