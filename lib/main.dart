@@ -1,19 +1,53 @@
+import 'package:app_with_tabs/controller/theme_controller.dart';
+import 'package:app_with_tabs/dependency_injection.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'homepage.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async{
+  runApp(MyApp());
+  DependencyInjection.init();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAppColors{
+  static final darkMode = Colors.grey[800];
+  static const lightMode = Colors.white;
 
-  // This widget is the root of your application.
+}
+
+class MyThemes{
+  static final darkTheme = ThemeData(
+    primaryColor: MyAppColors.darkMode,
+    brightness: Brightness.dark,
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Colors.white
+    ),
+    iconTheme: const IconThemeData(color: Colors.white)
+  );
+
+  static final lightTheme = ThemeData(
+    primaryColor: MyAppColors.lightMode,
+    brightness: Brightness.light,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: Colors.green[400]
+    ),
+    iconTheme: const IconThemeData(color: Colors.black)
+
+  );
+}
+
+
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+  final ThemeController themeController = Get.put(ThemeController());
+
+  
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return Obx(() => GetMaterialApp(
+      theme: themeController.currentTheme.value,
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
-    );
+    ));
   }
 }

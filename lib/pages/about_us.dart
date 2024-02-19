@@ -25,7 +25,6 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar:  AppBar(
         title: const Text('Creator ID card', style: TextStyle(fontSize: 18.0),),
         centerTitle: true,
@@ -39,8 +38,8 @@ class _AboutUsState extends State<AboutUs> {
             clickCounter += 1;
           });
         },
-        backgroundColor: Colors.grey[100],
-        child: const Icon(Icons.add),),
+        child: Icon(Icons.add, color: Theme.of(context).brightness == Brightness.dark? Colors.black : Colors.white),
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(

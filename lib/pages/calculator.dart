@@ -48,7 +48,6 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Colors.white,
       body: Padding( 
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
@@ -61,7 +60,7 @@ class _CalculatorState extends State<Calculator> {
                   padding: const EdgeInsets.all(10.0),
                   child: Text(text,
                     textAlign: TextAlign.left,
-                    style: const TextStyle(color: Colors.black,
+                    style: const TextStyle(
                     fontSize: 100
                     ),
                   ),
@@ -74,7 +73,7 @@ class _CalculatorState extends State<Calculator> {
                 calculatorBtn('AC', Colors.grey, Colors.white, 28),
                 calculatorBtn('⌫', Colors.grey, Colors.white, 32),
                 calculatorBtn('%', Colors.grey, Colors.white, 35),
-                calculatorBtn('/', (Colors.green[400])!, Colors.white, 35),
+                calculatorBtn('/', (Color(0xFF66BB6A))!, Colors.white, 35),
               ],
             ),
             const SizedBox(height: 10),
