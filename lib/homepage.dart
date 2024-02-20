@@ -1,5 +1,4 @@
 import 'package:app_with_tabs/controller/theme_controller.dart';
-import 'package:app_with_tabs/main.dart';
 import 'package:app_with_tabs/pages/about_us.dart';
 import 'package:app_with_tabs/pages/calculator.dart';
 import 'package:app_with_tabs/pages/home.dart';

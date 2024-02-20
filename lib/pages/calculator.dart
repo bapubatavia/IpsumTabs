@@ -73,7 +73,7 @@ class _CalculatorState extends State<Calculator> {
                 calculatorBtn('AC', Colors.grey, Colors.white, 28),
                 calculatorBtn('⌫', Colors.grey, Colors.white, 32),
                 calculatorBtn('%', Colors.grey, Colors.white, 35),
-                calculatorBtn('/', (Color(0xFF66BB6A))!, Colors.white, 35),
+                calculatorBtn('/', (Colors.green[400])!, Colors.white, 35),
               ],
             ),
             const SizedBox(height: 10),

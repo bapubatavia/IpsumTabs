@@ -28,6 +28,7 @@ class NetworkController extends GetxController{
         backgroundColor: Colors.red[400]!,
         icon: const Icon(Icons.wifi_off, color: Colors.white, size: 15,),
         margin: const EdgeInsets.symmetric(vertical: 60),
+        padding: const EdgeInsets.all(3),
         snackStyle: SnackStyle.GROUNDED,
       );
     } else{
